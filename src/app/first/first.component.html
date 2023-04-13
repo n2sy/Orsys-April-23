@@ -1,0 +1,15 @@
+<h4>Je m'appelle {{ nom }} -- {{ formation }}</h4>
+
+<div [hidden]="hd" [style.backgroundColor]="color">
+    Bienvenue chez Orsys
+</div>
+
+<button class="btn btn-primary" (click)="changerNom()">Click me</button>
+
+<input [(ngModel)]="nom" type="text">
+
+<hr>
+
+<app-second (msgToParent)="traitement($event)" [txtColor]="'red'"></app-second>
+<!-- <app-second [txtColor]="color"></app-second>
+<app-second [txtColor]="'green'"></app-second> -->
