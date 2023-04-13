@@ -1,5 +1,5 @@
 <ol class="list-group">
-    <app-item (candToList)="sendCandToCv($event)" [oneCandidat]="allCandidats[0]"></app-item>
-    <app-item (candToList)="sendCandToCv($event)" [oneCandidat]="allCandidats[1]"></app-item>
-    <app-item (candToList)="sendCandToCv($event)" [oneCandidat]="allCandidats[2]"></app-item>
+    <app-item (candToList)="sendCandToCv($event)" *ngFor="let cand of allCandidats" [oneCandidat]="cand"></app-item>
+    <!-- <app-item (candToList)="sendCandToCv($event)" [oneCandidat]="allCandidats[1]"></app-item>
+    <app-item (candToList)="sendCandToCv($event)" [oneCandidat]="allCandidats[2]"></app-item> -->
 </ol>
