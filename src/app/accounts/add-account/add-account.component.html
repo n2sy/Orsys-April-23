@@ -1,1 +1,13 @@
-<p>add-account works!</p>
+<div>
+    <label>Account Name : </label>
+    <input [(ngModel)]="nameAccount" type="text" class="form-control">
+
+    <label>Account Status :</label>
+    <select [(ngModel)]="statutAccount" class="form-control">
+        <option value=""></option>
+        <option value="online">Online</option>
+        <option value="offline">Offline</option>
+        <option value="unknown">Unknown</option>
+    </select>
+    <button (click)="addAccount()" class="btn btn-primary">Add Account</button>
+</div>
