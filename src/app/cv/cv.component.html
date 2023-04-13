@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-5">
-        <app-liste></app-liste>
+        <app-liste (candToCv)="recupererSelectedCand($event)" [allCandidats]="tabCandidats"></app-liste>
     </div>
     <div class="col-md-7">
-        <app-details></app-details>
+        <app-details [candSelected]="selectedCand"></app-details>
     </div>
 
 </div>
