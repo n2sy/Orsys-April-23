@@ -11,6 +11,10 @@ export class HomeAccountsComponent {
       nom: 'Nidhal Account',
       statut: 'online',
     },
+    {
+      nom: 'Aurore Account',
+      statut: 'offline',
+    },
   ];
 
   addNewAccount(newAcc) {
