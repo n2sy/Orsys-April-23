@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FirstService } from '../services/first.service';
 
 @Component({
   selector: 'app-direct',
@@ -24,5 +25,13 @@ export class DirectComponent {
       this.class3 = false;
       this.class1 = true;
     }
+  }
+
+  constructor(private firstSer: FirstService) {}
+
+  ngOnInit() {
+    console.log('Dans DirectComponent');
+
+    this.firstSer.showInfos();
   }
 }
