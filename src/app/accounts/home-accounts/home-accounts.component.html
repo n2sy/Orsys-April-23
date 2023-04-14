@@ -1,7 +1,12 @@
 <div class="col-md-8">
     <app-add-account (accountToHome)="addNewAccount($event)"></app-add-account>
 
-    <app-item-account *ngFor="let acc of tabAccounts" ngIf="acc.statut == 'online'"
-        [oneAccount]="acc"></app-item-account>
+    <ng-container *ngFor="let acc of tabAccounts">
+        <app-item-account *ngIf="acc.statut == 'offline'" [oneAccount]="acc">
+
+        </app-item-account>
+
+    </ng-container>
+
 
 </div>

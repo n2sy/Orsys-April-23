@@ -1,0 +1,21 @@
+<div [ngStyle]="{
+    'backgroundColor': bg,
+    'color' : cl,
+    'fontSize' : sz,
+    'fontFamily' : font
+}">Exercice d'application de NgStyle</div>
+<br>
+
+<label>Background Color</label>
+<input [(ngModel)]="bg" type="text" class="form-control">
+
+<label>Text Color</label>
+<input [(ngModel)]="cl" type="text" class="form-control">
+
+<label>Text Size</label>
+<input #inputSize (keyup)="changeSize(inputSize)" type="number" class="form-control">
+
+<label for="">Text Font</label>
+<select [(ngModel)]="font" class="form-control">
+    <option *ngFor="let font of listFonts" [value]="font">{{font}}</option>
+</select>
