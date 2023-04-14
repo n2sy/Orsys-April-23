@@ -1,6 +1,9 @@
+<input type="text" class="form-control">
+<br>
 <ol class="list-group">
     <li class="list-group-item" [ngClass]="affecterClass(serv.statut)" *ngFor="let serv of listServers">
-        {{ serv.nom }} | {{ serv.type }} | {{ serv.date_d }}
+        {{ 3 | currency:'EUR'}} | {{ serv.nom | short:13 }} | {{ serv.type | titlecase }} | {{ serv.date_d |
+        date:'fullDate' | uppercase }}
         <span class="badge bg-secondary">{{ serv.statut }} </span>
     </li>
 </ol>
