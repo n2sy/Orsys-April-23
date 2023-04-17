@@ -11,6 +11,7 @@ export class AccueilComponent {
   year = 2023;
   constructor(private router: Router) {}
   goToAccounts() {
+    // traitement à faire
     this.router.navigateByUrl('/accounts');
   }
 

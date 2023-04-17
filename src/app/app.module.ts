@@ -23,6 +23,7 @@ import { RecruterComponent } from './recruter/recruter.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ORSYS_ROUTING } from './app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ORSYS_ROUTING } from './app.routing';
     RecruterComponent,
     NoImagePipe,
     AccueilComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
   providers: [FirstService],

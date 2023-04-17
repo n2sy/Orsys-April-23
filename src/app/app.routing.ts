@@ -3,12 +3,14 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { CvComponent } from './cv/cv.component';
 import { MsWordComponent } from './ms-word/ms-word.component';
 import { HomeAccountsComponent } from './accounts/home-accounts/home-accounts.component';
+import { DirectComponent } from './direct/direct.component';
 
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'cv', component: CvComponent },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'accounts', component: HomeAccountsComponent },
+  { path: 'direct', component: DirectComponent },
 ];
 
 export const ORSYS_ROUTING = RouterModule.forRoot(myRoutes);
