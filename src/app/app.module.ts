@@ -24,6 +24,8 @@ import { NoImagePipe } from './pipes/no-image.pipe';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ORSYS_ROUTING } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InfosComponent } from './infos/infos.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     NoImagePipe,
     AccueilComponent,
     NavbarComponent,
+    InfosComponent,
+    UpdateComponent,
   ],
   imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
   providers: [FirstService],
