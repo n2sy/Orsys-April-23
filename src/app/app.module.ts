@@ -21,10 +21,32 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { FirstService } from './services/first.service';
 import { RecruterComponent } from './recruter/recruter.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { AccueilComponent } from './accueil/accueil.component';
+import { ORSYS_ROUTING } from './app.routing';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, SecondComponent, CvComponent, ListeComponent, DetailsComponent, ItemComponent, HomeAccountsComponent, AddAccountComponent, ItemAccountComponent, DirectComponent, MsWordComponent, ManageServersComponent, CustomDirDirective, ShortPipe, FilterPipe, RecruterComponent, NoImagePipe],
-  imports: [BrowserModule, FormsModule],
+  declarations: [
+    AppComponent,
+    FirstComponent,
+    SecondComponent,
+    CvComponent,
+    ListeComponent,
+    DetailsComponent,
+    ItemComponent,
+    HomeAccountsComponent,
+    AddAccountComponent,
+    ItemAccountComponent,
+    DirectComponent,
+    MsWordComponent,
+    ManageServersComponent,
+    CustomDirDirective,
+    ShortPipe,
+    FilterPipe,
+    RecruterComponent,
+    NoImagePipe,
+    AccueilComponent,
+  ],
+  imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })
