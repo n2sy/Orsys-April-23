@@ -1,1 +1,8 @@
-<p>info-server works!</p>
+<div class="container">
+    <h4> {{ oneServer.nom }} </h4>
+    <hr>
+    <p>Le statut du serveur est {{ oneServer.statut }} </p>
+    <button routerLink="edit" [disabled]="showBtn" class="btn btn-info">Editer</button>
+    <br>
+    <i *ngIf="showBtn">Impossible d'editer ce serveur</i>
+</div>
