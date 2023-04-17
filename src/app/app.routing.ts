@@ -30,6 +30,10 @@ const myRoutes: Routes = [
   //     ],
   //   },
   { path: 'ms-word', component: MsWordComponent },
+  {
+    path: 'servers',
+    loadChildren: () => import('./sub/sub.module').then((m) => m.SubModule),
+  },
   { path: 'accounts', component: HomeAccountsComponent },
   { path: 'direct', component: DirectComponent },
   { path: 'not-found', component: NotFoundComponent },
