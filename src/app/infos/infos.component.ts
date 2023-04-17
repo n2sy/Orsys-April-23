@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ListCandidatsService } from '../services/list-candidats.service';
+import { Candidat } from '../models/candidat';
 
 @Component({
   selector: 'app-infos',
@@ -8,7 +10,12 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 })
 export class InfosComponent {
   id;
-  constructor(private activatedRoute: ActivatedRoute) {}
+  candidatInfos: Candidat;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private candSer: ListCandidatsService
+  ) {}
 
   ngOnInit() {
     // V1 avec params
@@ -19,7 +26,10 @@ export class InfosComponent {
 
     this.activatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
-        this.id = p.get('myid');
+        this.candidatInfos = this.candSer.getCandidatById(p.get('myid'));
+        if (!this.candidatInfos) this.router.navigateByUrl('/not-found');
+
+        //this.id = p.get('myid');
       },
       // error: () => {},
       // complete: () => {},

@@ -6,15 +6,34 @@ import { HomeAccountsComponent } from './accounts/home-accounts/home-accounts.co
 import { DirectComponent } from './direct/direct.component';
 import { InfosComponent } from './infos/infos.component';
 import { UpdateComponent } from './update/update.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AddComponent } from './add/add.component';
 
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },
-  { path: 'cv', component: CvComponent },
-  { path: 'cv/:myid', component: InfosComponent },
-  { path: 'cv/:id/edit', component: UpdateComponent },
+  {
+    path: 'cv',
+    component: CvComponent,
+    children: [
+      { path: 'add', component: AddComponent },
+      { path: ':myid', component: InfosComponent },
+      { path: ':id/edit', component: UpdateComponent },
+    ],
+  },
+  //   {
+  //     path: 'cv',
+  //     children: [
+  //       { path: '', component: CvComponent },
+  //       { path: 'add', component: AddComponent },
+  //       { path: ':myid', component: InfosComponent },
+  //       { path: ':id/edit', component: UpdateComponent },
+  //     ],
+  //   },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'accounts', component: HomeAccountsComponent },
   { path: 'direct', component: DirectComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: 'not-found' },
 ];
 
 export const ORSYS_ROUTING = RouterModule.forRoot(myRoutes);

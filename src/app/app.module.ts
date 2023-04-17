@@ -26,6 +26,8 @@ import { ORSYS_ROUTING } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InfosComponent } from './infos/infos.component';
 import { UpdateComponent } from './update/update.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { UpdateComponent } from './update/update.component';
     NavbarComponent,
     InfosComponent,
     UpdateComponent,
+    NotFoundComponent,
+    AddComponent,
   ],
   imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
   providers: [FirstService],
