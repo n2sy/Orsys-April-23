@@ -13,7 +13,14 @@ export class AddComponent {
   onSubmit(newC) {
     console.log(newC);
 
-    this.CandSer.addCandidat(newC);
-    this.router.navigateByUrl('/cv');
+    this.CandSer.addCandidatAPI(newC).subscribe({
+      next: (response) => {
+        alert(response['message']);
+        this.router.navigateByUrl('/cv');
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }
