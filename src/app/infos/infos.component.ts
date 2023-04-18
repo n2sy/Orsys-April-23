@@ -42,4 +42,11 @@ export class InfosComponent {
     //   () => {}
     // );
   }
+
+  deleteHandler() {
+    if (confirm('Etes-vous sur de vouloir supprimer ce candidat ?')) {
+      this.candSer.deleteCandidat(this.candidatInfos);
+      this.router.navigateByUrl('/cv');
+    }
+  }
 }

@@ -1,1 +1,38 @@
-<p>update works!</p>
+<div class="container alert alert-info col-md-8">
+    <form #f="ngForm" class="well form-horizontal">
+
+        <div class="d-flex justify-content-center">
+            <img width="150px" height="150px" class="rounded-circle align-content-center"
+                src="../../assets/{{ candToUpdate.avatar | noImage }}" alt="">
+        </div>
+        <fieldset>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Prénom</label>
+                <input [(ngModel)]="candToUpdate.prenom" name="prenom" class="form-control" required="true" type="text">
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Nom</label>
+                <input [(ngModel)]="candToUpdate.nom" name="nom" class="form-control" required="true" type="text">
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Age</label>
+                <input [(ngModel)]="candToUpdate.age" name="age" class="form-control" required="true" type="number">
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Profession</label>
+                <input [(ngModel)]="candToUpdate.profession" name="profession" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Avatar</label>
+                <input [(ngModel)]="candToUpdate.avatar" name="avatar" class="form-control" type="text">
+            </div>
+
+        </fieldset>
+        <br>
+        <button (click)="onUpdate()" type="submit" class="btn btn-success">Valider</button>
+    </form>
+</div>

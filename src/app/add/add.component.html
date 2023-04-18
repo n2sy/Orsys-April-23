@@ -1,1 +1,15 @@
-<p>Composant pour l'ajout d'un candidat</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <label for="">Prénom</label>
+    <input required ngModel name="prenom" type="text" class="form-control">
+    <label for="">Nom</label>
+    <input required ngModel name="nom" type="text" class="form-control">
+    <label for="">Age</label>
+    <input ngModel name="age" type="number" class="form-control">
+    <label for="">Profession</label>
+    <input ngModel name="profession" type="text" class="form-control">
+    <label for="">Avatar</label>
+    <input ngModel name="avatar" type="text" class="form-control">
+    <br>
+    <button [disabled]="f.invalid" type="submit" class="btn btn-info">Ajouter</button>
+
+</form>
