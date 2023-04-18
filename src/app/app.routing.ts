@@ -9,6 +9,9 @@ import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddComponent } from './add/add.component';
 import { LoginComponent } from './login/login.component';
+import { AccessGuard } from './access.guard';
+import { LogoutGuard } from './logout.guard';
+import { LoginGuard } from './login.guard';
 
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },
@@ -25,9 +28,13 @@ const myRoutes: Routes = [
     path: 'cv',
     children: [
       { path: '', component: CvComponent },
-      { path: 'add', component: AddComponent },
+      { path: 'add', component: AddComponent, canActivate: [AccessGuard] },
       { path: ':myid', component: InfosComponent },
-      { path: ':id/edit', component: UpdateComponent },
+      {
+        path: ':id/edit',
+        component: UpdateComponent,
+        canActivate: [AccessGuard],
+      },
     ],
   },
   { path: 'ms-word', component: MsWordComponent },
@@ -36,7 +43,12 @@ const myRoutes: Routes = [
     loadChildren: () => import('./sub/sub.module').then((m) => m.SubModule),
   },
   { path: 'accounts', component: HomeAccountsComponent },
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [LogoutGuard],
+    canDeactivate: [LoginGuard],
+  },
   { path: 'direct', component: DirectComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
