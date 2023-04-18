@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ListCandidatsService } from '../services/list-candidats.service';
 import { Candidat } from '../models/candidat';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-infos',
@@ -14,7 +15,8 @@ export class InfosComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private candSer: ListCandidatsService
+    private candSer: ListCandidatsService,
+    public authSer: AuthService
   ) {}
 
   ngOnInit() {
