@@ -30,6 +30,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AddComponent } from './add/add.component';
 import { SubModule } from './sub/sub.module';
 import { ExpObsComponent } from './exp-obs/exp-obs.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ExpObsComponent } from './exp-obs/exp-obs.component';
     NotFoundComponent,
     AddComponent,
     ExpObsComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
   providers: [FirstService],

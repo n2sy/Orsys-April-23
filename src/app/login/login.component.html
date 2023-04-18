@@ -1,0 +1,47 @@
+<form #f="ngForm">
+    <label for="log">Login</label>
+    <input #loginInput="ngModel" type="text" class="form-control" required email ngModel name="login" id="log">
+    <div *ngIf="loginInput.invalid && loginInput.dirty" class="alert alert-danger">Veuillez saisir une adresse mail
+    </div>
+
+    <label for="">Mot de passe</label>
+    <input #pwd="ngModel" type="text" class="form-control" required minlength="4" ngModel name="password">
+    <div *ngIf="pwd.invalid && pwd.touched" class="alert alert-danger">Un mot de passe est constituté d'au moins 4
+        caractères
+    </div>
+
+    <div #grp="ngModelGroup" ngModelGroup="infos">
+        <label>Compétence</label>
+        <select [ngModel]="defaultSkill" name="skill" class="form-control">
+            <option value=""></option>
+            <option value="java">Java</option>
+            <option value="javascript">Javascript</option>
+            <option value="typescript">Typescript</option>
+        </select>
+
+        <label>Commentaire</label>
+        <textarea [(ngModel)]="myComment" class="form-control" name="commentaire" cols="5" rows="4"></textarea>
+
+        {{ myComment }}
+
+    </div>
+
+    <label for="">Gestion d'erreurs</label>
+    <input #exp="ngModel" ngModel name="exemple" required minlength="5" pattern="nidhal" type="text"
+        class="form-control">
+    <div *ngIf="exp.invalid" class="alert alert-danger">
+        <p *ngIf="exp.errors['required']">Ce champ est obligatoire</p>
+        <p *ngIf="exp.errors['minlength']">Il faut saisir au moins 5 caractères</p>
+        <p *ngIf="exp.errors['pattern']">Le pattern est 'nidhal'</p>
+    </div>
+
+
+
+    <br>
+    <button [disabled]="f.invalid" (click)="submitHandler(f)" type="submit" class="btn btn-primary">Submit</button>
+    <div *ngIf="f.invalid && f.dirty" class="alert alert-info">Ce formulaire n'est pas valide</div>
+    <br>
+    <pre>
+        {{ f.value | json}}
+    </pre>
+</form>
