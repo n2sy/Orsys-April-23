@@ -31,7 +31,7 @@ export class InfosComponent {
             this.candidatInfos = response;
           },
           error: (err) => {
-            console.log(err);
+            console.log(err.error['message'], err['status']);
             this.router.navigateByUrl('/not-found');
           },
         });

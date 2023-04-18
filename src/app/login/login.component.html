@@ -1,6 +1,8 @@
+<div *ngIf="showErrorMsg" class="alert alert-danger">Login et/ou Mot de passe invalides
+</div>
 <form #f="ngForm">
     <label for="log">Login</label>
-    <input #loginInput="ngModel" type="text" class="form-control" required email ngModel name="login" id="log">
+    <input #loginInput="ngModel" type="text" class="form-control" required email ngModel name="email" id="log">
     <div *ngIf="loginInput.invalid && loginInput.dirty" class="alert alert-danger">Veuillez saisir une adresse mail
     </div>
 
@@ -9,7 +11,9 @@
     <div *ngIf="pwd.invalid && pwd.touched" class="alert alert-danger">Un mot de passe est constituté d'au moins 4
         caractères
     </div>
-
+    <button [disabled]="f.invalid" (click)="submitHandler(f)" type="submit" class="btn btn-primary">Se
+        Connecter</button>
+    <!-- 
     <div #grp="ngModelGroup" ngModelGroup="infos">
         <label>Compétence</label>
         <select [ngModel]="defaultSkill" name="skill" class="form-control">
@@ -37,11 +41,10 @@
 
 
 
-    <br>
-    <button [disabled]="f.invalid" (click)="submitHandler(f)" type="submit" class="btn btn-primary">Submit</button>
-    <div *ngIf="f.invalid && f.dirty" class="alert alert-info">Ce formulaire n'est pas valide</div>
+    <br> -->
+    <!-- <div *ngIf="f.invalid && f.dirty" class="alert alert-info">Ce formulaire n'est pas valide</div>
     <br>
     <pre>
         {{ f.value | json}}
-    </pre>
+    </pre> -->
 </form>

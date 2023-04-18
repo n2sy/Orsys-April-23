@@ -21,7 +21,7 @@ exports.getAllPersons = async (req, res) => {
 
 
 }
-exports.getPerson = (req, res) => {
+exports.getPerson = (req, res, next) => {
     const pId = req.params.id;
 
     Personne.findById(pId)
@@ -35,6 +35,7 @@ exports.getPerson = (req, res) => {
         })
         .catch(err => {
             console.log(err);
+            next(err);
         })
 
 
